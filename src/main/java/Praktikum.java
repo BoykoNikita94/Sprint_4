@@ -8,5 +8,6 @@ public class Praktikum {
 
         Account account = new Account(ownerName);
         boolean result = account.checkNameToEmboss();
+        System.out.println(result);
     }
 }

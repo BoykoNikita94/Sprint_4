@@ -8,15 +8,15 @@ import static org.junit.Assert.assertEquals;
 public class AccountTests {
 
     private final String actualOwnerName;
-    private final boolean expectedOwnerName;
+    private final boolean expectedResult;
 
-    public AccountTests(String actualOwnerName, boolean expectedOwnerName) {
+    public AccountTests(String actualOwnerName, boolean expectedResult) {
         this.actualOwnerName = actualOwnerName;
-        this.expectedOwnerName = expectedOwnerName;
+        this.expectedResult = expectedResult;
     }
 
     @Parameterized.Parameters
-    public static Object[][] checkOwnerName() {
+    public static Object[][] ownerNameData() {
         return new Object[][]{
                 {"Ded Doedalus", true},
                 {"Dd", false},
@@ -31,9 +31,9 @@ public class AccountTests {
     }
 
     @Test
-    public void ownerNameShouldBeCorrect(){
+    public void checkOwnerName(){
         Account account = new Account(actualOwnerName);
         boolean actual = account.checkNameToEmboss();
-        assertEquals(expectedOwnerName, actual);
+        assertEquals(expectedResult, actual);
     }
 }
