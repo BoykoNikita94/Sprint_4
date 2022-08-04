@@ -27,6 +27,7 @@ public class AccountTests {
                 {"Ded Doe dalus", false},
                 {" ", false},
                 {"Ded  Doedalus", false},
+                {null, false},
         };
     }
 

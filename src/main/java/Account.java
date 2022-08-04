@@ -1,7 +1,6 @@
-import org.apache.commons.lang3.StringUtils;
-
 public class Account {
 
+    final String REGEX = "^(?=.{3,19}$)(^\\S+\\s{1}\\S+$)";
     private final String name;
 
     public Account(String name) {
@@ -9,6 +8,6 @@ public class Account {
     }
 
     public boolean checkNameToEmboss() {
-        return name.length() >= 3 && name.length() < 19 && (StringUtils.countMatches(name," ") == 1) && !name.startsWith(" ") && !name.endsWith(" ");
+        return name != null && name.matches(REGEX);
     }
 }
